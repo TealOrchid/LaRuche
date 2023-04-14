@@ -1,0 +1,117 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fdc12a;
+    margin: 0; 
+    color: black;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+main {
+    margin: auto;
+    margin-right: 2vw;
+    margin-left: 35vw;
+    text-align: right;
+    font-size: clamp(1.5vw, 1.8vw, 2vw);
+}
+
+a {
+    width: 64px;
+    height: 64px;
+    margin: 2vw;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#langue {
+    position: fixed;
+    right: 0;
+    margin-top: 2vw;
+    margin-right: 2vw;
+    font-size: clamp(1.75vw, 2vw, 2.25vw);
+}
+
+#titre {
+    width: 100vw;
+    height: clamp(10vw, 12.5vw, 15vw);
+    position: fixed;
+    bottom: 0;
+    margin: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.lettre {
+    margin: 0;
+    font-size: clamp(10vw, 12.5vw, 15vw);
+}
+
+#a {
+    animation: slide 1s 1; 
+    bottom: 0;
+}
+
+#b {
+    animation: slide 1.2s 1; 
+    bottom: 0;
+}
+
+#c {
+    animation: slide 1.4s 1; 
+    bottom: 0;
+}
+
+#d {
+    animation: slide 1.6s 1; 
+    bottom: 0;
+}
+
+#e {
+    animation: slide 1.8s 1; 
+    bottom: 0;
+}
+
+#f {
+    animation: slide 2s 1; 
+    bottom: 0;
+}
+
+#g {
+    animation: slide 2.2s 1; 
+    bottom: 0;
+}
+
+#h {
+    animation: slide 2.4s 1; 
+    bottom: 0;
+}
+
+#i {
+    animation: slide 2.6s 1; 
+    bottom: 0;
+}
+
+#j {
+    animation: slide 2.8s 1; 
+    bottom: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(50vh);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
