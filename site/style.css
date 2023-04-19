@@ -8,6 +8,7 @@ body {
     font-family: Arial;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 header {
@@ -126,4 +127,63 @@ main {
         width: auto;
         margin-inline: 5vw;
     }
+}
+
+#menu {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    color: #fff;
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+  
+ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 0.5rem;
+}
+
+.pages {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fdc12a;
+}
+
+input {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 2vw;
+    padding: 0;
+    border: none; 
+    font-weight: bold;
+}
+
+#open {
+    background-color: #fdc12a;
+    color: black;
+    font-size: 2.5rem;
+    line-height: 0.8;
+}
+
+#close {
+    background-color: black;
+    color: #fdc12a;
+    font-size: 1.5rem;
+}
+
+.pages:hover, #close:hover {
+    color: white;
 }
