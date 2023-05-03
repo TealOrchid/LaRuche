@@ -15,7 +15,7 @@ cursor = connection.cursor()
 # Peut utiliser le Format String
 # Aussi les paramètres sont utilisées automatiquement par la bibliothèque en utilisant mysql_real_escape_string
 # Ou si ce n'est pas supporté par MySQL puis mysql_escape_string
-cursor.execute("SELECT poids FROM `capteur_poids` WHERE heure = (select max(heure) from capteur_poids) and date = (select max(date) from capteur_poids)")
+cursor.execute("SELECT poids FROM `capteur_poids` where date = (select max(date) from capteur_poids) order by heure DESC limit 1")
 
 #g=cursor.fetchall()#recuperation de l'ensemble tuple
 #print(g)
@@ -53,6 +53,7 @@ connection.close #fermeture
 
 
     
+
 
 
 
