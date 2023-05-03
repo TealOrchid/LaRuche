@@ -87,6 +87,7 @@ cursor.close()#fermeture cursor
 connection.close #fermeture
 
 
+
     
 
 
