@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 #_*_coding:Utf-8_*_
 
-
 import RPi.GPIO as GPIO
 import serial
 import time, sys
@@ -84,6 +83,7 @@ def SendTextMessage(numero,message):
     # long que les autres  commandes AT précédentes
     reponse=ser.readlines()
     return reponse
+
 if __name__=="__main__":
     print('reset')
     setup()
@@ -91,8 +91,3 @@ if __name__=="__main__":
     CheckNetworkStatus()
     rep=SendTextMessage("0760291070","bonjour")
     print('EnvoiSMS=',rep,'\n')
-    
-
-
-
-
