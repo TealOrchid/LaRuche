@@ -1,7 +1,8 @@
+/*Paramètres de style généraux (début)*/
 body {
     width: auto;
-    height: 100vh;
     height: 100svh;
+    height: 100vh;
     background-color: #fdc12a;
     margin: 0; 
     color: black;
@@ -11,6 +12,68 @@ body {
     box-sizing: border-box;
 }
 
+/*Paramètres de style du menu (début)*/
+#menu {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    color: white;
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 0.5rem;
+}
+
+.pages {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fdc12a;
+}
+
+input {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 2vw;
+    padding: 0;
+    border: none; 
+    font-weight: bold;
+}
+
+#open {
+    background-color: #fdc12a;
+    color: black;
+    font-size: 2.5rem;
+    line-height: 0.8;
+}
+
+#close {
+    background-color: black;
+    color: #fdc12a;
+    font-size: 1.5rem;
+}
+
+.pages:hover, #close:hover {
+    color: white;
+}
+/*Paramètres de style du menu (fin)*/
+
+/*Paramètres de style de l'en-tête (début)*/
 header {
     width: 100vw;
     position: fixed;
@@ -27,16 +90,9 @@ a {
     border: 0;
     background-color: transparent;
 }
+/*Paramètres de style de l'en-tête (fin)*/
 
-main {
-    margin: auto;
-    margin-right: 2vw;
-    margin-left: 35vw;
-    text-align: right;
-    font-size: clamp(1rem, 1.5rem, 2rem);
-    overflow: hidden;
-}
-
+/*Paramètres de style du titre (début)*/
 #titre {
     width: 100vw;
     position: fixed;
@@ -102,88 +158,119 @@ main {
         transform: translateY(0);
     }
 }
+/*Paramètres de style du titre (fin)*/
+/*Paramètres de style généraux (fin)*/
 
-.centre {
+/*Paramètres de style de la page: L'Accueil (début)*/
+#accueil {
+    margin: auto;
+    margin-right: 2vw;
+    margin-left: 35vw;
+    text-align: right;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+    overflow: hidden;
+}
+/*Paramètres de style de la page: L'Accueil (fin)*/
+
+/*Paramètres de style de la page: LaCollecte (début)*/
+#pot {
+    width: 25vw;
+    height: auto;
+	margin: auto;
+    margin-top: 10vw;
+    margin-right: 10vw;
+}
+
+#le_miel_qui_coule {
+	margin-top: 15vw;
+    right: 25vw;
+	width: 15px;
+	opacity: 10;
+	position: absolute;
+	background-color: #ffc069;
+	animation: miel 5s 1s linear infinite;
+}
+
+@keyframes miel {
+	0% {
+		height: 0;
+	}
+  
+	5% {
+		height: 0;
+	}
+	
+	60% {
+		height: 200px;
+	}
+	
+	85% {
+		height: 375px;
+	}
+	
+	100% {
+		height: 425px;
+		opacity: 0;
+	}
+}
+/*Paramètres de style de la page: LaCollecte (fin)*/
+
+/*Paramètres de style de la page: LaMétéo (début)*/
+/*Paramètres de style de la page: LaMétéo (fin)*/
+
+/*Paramètres de style de la page: LeLieu (début)*/
+#carte {
     width: 50vw;
     aspect-ratio: 16 / 9;
     margin: auto;
     margin-right: 2vw;
     background-color: black;
 }
+/*Paramètres de style de la page: LeLieu (fin)*/
 
+/*Paramètres de style de la page: LeLive (début)*/
+#live {
+    width: 50vw;
+    aspect-ratio: 16 / 9;
+    margin: auto;
+    margin-right: 2vw;
+    background-color: black;
+}
+/*Paramètres de style de la page: LeLive (fin)*/
+
+/*Paramètres de style de la page: L'Histoire (début)*/
+#histoire {
+    margin: auto;
+    margin-right: 2vw;
+    margin-left: 35vw;
+    text-align: right;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+    overflow: hidden;
+}
+/*Paramètres de style de la page: L'Histoire (fin)*/
+
+/*Paramètres de dynamisation (début)*/
 @media only screen and (max-width: 960px){
-    main {
+    .lettre {
+        font-size: clamp(3.5rem, 5.5rem, 7.5rem);
+    }
+
+    #accueil, #histoire {
         margin: auto;
         margin-inline: 5vw;
         text-align: center;
         font-size: clamp(0.25rem, 1rem, 1rem);
     }
-    
-    .lettre {
-        font-size: clamp(3.5rem, 5.5rem, 7.5rem);
+
+    #pot {
+        width: 70vw;
+        height: auto;
+        margin: auto;
     }
 
-    .centre {
+    #carte, #live {
         width: auto;
         margin-inline: 5vw;
     }
 }
-
-#menu {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    overflow: hidden;
-    color: #fff;
-    z-index: 100;
-    transform: translateY(-100%);
-    transition: transform 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-}
-  
-ul {
-    margin: auto;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
-
-li {
-    margin: 0.5rem;
-}
-
-.pages {
-    font-size: 3rem;
-    text-decoration: none;
-    color: #fdc12a;
-}
-
-input {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 2vw;
-    padding: 0;
-    border: none; 
-    font-weight: bold;
-}
-
-#open {
-    background-color: #fdc12a;
-    color: black;
-    font-size: 2.5rem;
-    line-height: 0.8;
-}
-
-#close {
-    background-color: black;
-    color: #fdc12a;
-    font-size: 1.5rem;
-}
-
-.pages:hover, #close:hover {
-    color: white;
-}
+/*Paramètres de dynamisation (fin)*/
