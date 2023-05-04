@@ -42,9 +42,6 @@ for i in range(cursor.rowcount):
     
 #envoie du message pour récolter le miel
 if row[0] >= 95:
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Vous pouvez recolter le miel")
     print('EnvoiSMS=',rep,'\n')
     
