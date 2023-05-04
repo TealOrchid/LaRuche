@@ -41,10 +41,7 @@ for i in range(cursor.rowcount):
     print(" | {0} |".format(row[0]))
     
 #envoie du message
-if row[0][0] >= "valeur" or row[0][0] <= "valeur" or row[0][1] >= "valeur" row[0][1] <= "valeur":
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
+if row[0][0] >= "valeur" or row[0][0] <= "valeur" or row[0][1] >= "valeur" or row[0][1] <= "valeur":
     rep=lib_gsm.SendTextMessage("0760291070","La ruche se fait voler !!!")
     print('EnvoiSMS=',rep,'\n')
     
