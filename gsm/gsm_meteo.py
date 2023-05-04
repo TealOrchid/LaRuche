@@ -42,44 +42,26 @@ for i in range(cursor.rowcount):
     
 #envoie du message
 if row[0] <= 15:
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Temperature dans la ruche trop basse !")
     print('EnvoiSMS=',rep,'\n')
     
 if row[0] >= 40:
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Temperature dans la ruche trop haute !")
     print('EnvoiSMS=',rep,'\n')
     
 if row[1] <= "valeur":
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Humiditee dans la ruche trop basse !")
     print('EnvoiSMS=',rep,'\n')
     
 if row[1] >= "valeur":
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Humiditee dans la ruche trop elevee !")
     print('EnvoiSMS=',rep,'\n')
     
 if row[2] <= "valeur":
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Pression dans la ruche trop basse !")
     print('EnvoiSMS=',rep,'\n')
     
 if row[2] >= "valeur":
-    #lib_gsm.setup()
-    #lib_gsm.Initialize()
-    #lib_gsm.CheckNetworkStatus()
     rep=lib_gsm.SendTextMessage("0760291070","Pression dans la ruche trop elevee !")
     print('EnvoiSMS=',rep,'\n')
     
