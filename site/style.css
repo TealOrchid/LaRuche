@@ -159,6 +159,19 @@ a {
     }
 }
 /*Paramètres de style du titre (fin)*/
+
+#pot_titre {
+    width: clamp(7rem, 11rem, 15rem);
+    height: auto;
+    margin: auto;
+    right: 0;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+}
+
+#lacollecte {
+    display: none;
+}
 /*Paramètres de style généraux (fin)*/
 
 /*Paramètres de style de la page: L'Accueil (début)*/
@@ -173,45 +186,61 @@ a {
 /*Paramètres de style de la page: L'Accueil (fin)*/
 
 /*Paramètres de style de la page: LaCollecte (début)*/
-#pot {
-    width: 25vw;
-    height: auto;
-	margin: auto;
-    margin-top: 10vw;
-    margin-right: 10vw;
+/* !!! Cette page est disponible que sur mobile, c'est fait exprès !!! */
+.lettre_lacollecte {
+    margin: 0;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    line-height: 0.8;
+    font-size: clamp(2rem, 4.5rem, 6rem);
 }
 
-#le_miel_qui_coule {
-	margin-top: 15vw;
-    right: 25vw;
-	width: 15px;
-	opacity: 10;
-	position: absolute;
-	background-color: #ffc069;
-	animation: miel 5s 1s linear infinite;
+#pot {
+    margin: auto;
+    margin-inline: 5vw;
+    display: grid;
+}
+
+#pot > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#pot > img {
+    width: 100%;
+}
+
+#miel_qui_coule {
+    margin-top: 15%;
+    margin-inline: auto;
+    width: 0.5rem;
+    background-color: #ffc069;
+    animation: miel 5s 1s linear infinite;
 }
 
 @keyframes miel {
 	0% {
-		height: 0;
-	}
-  
-	5% {
-		height: 0;
-	}
-	
-	60% {
-		height: 200px;
-	}
-	
-	85% {
-		height: 375px;
-	}
-	
-	100% {
-		height: 425px;
-		opacity: 0;
-	}
+        height: 0;
+    }
+
+    5% {
+        height: 0;
+    }
+
+    60% {
+        height: 48%;
+        opacity: 0.75;
+    }
+
+    85% {
+        height: 70%;
+        opacity: 0.5;
+    }
+
+    100% {
+        height: 80%;
+        opacity: 0;
+    }
 }
 /*Paramètres de style de la page: LaCollecte (fin)*/
 
@@ -251,6 +280,10 @@ a {
 
 /*Paramètres de dynamisation (début)*/
 @media only screen and (max-width: 960px){
+    a, #open, #close {
+        margin: 5vw;
+    }
+
     .lettre {
         font-size: clamp(3.5rem, 5.5rem, 7.5rem);
     }
@@ -262,15 +295,17 @@ a {
         font-size: clamp(0.25rem, 1rem, 1rem);
     }
 
-    #pot {
-        width: 70vw;
-        height: auto;
-        margin: auto;
+    #pot_titre {
+        display: none;
     }
 
     #carte, #live {
         width: auto;
         margin-inline: 5vw;
+    }
+
+    #lacollecte {
+        display: initial;
     }
 }
 /*Paramètres de dynamisation (fin)*/
