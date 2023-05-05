@@ -1,11 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding:UTF-8 -*-
+
 #TEST
 
 """
-INSERTION au sein de la table CAPTEUR_POIDS
+INSERTION au sein de la table capteur_poids
 """
-
-#!/usr/bin/env python3
-# -*- coding:UTF-8 -*-
 
 # import MySQLdb module
 import MySQLdb
@@ -13,6 +13,7 @@ import time
 import datetime
 
 #---------------------------------------------------------------------|
+#DONNEES_python
 
 """"""
 POIDS = 37
