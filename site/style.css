@@ -82,7 +82,7 @@ header {
     flex-direction: row;
 }
 
-a {
+#logo {
     width: 64px;
     height: 64px;
     margin: 2vw;
@@ -148,6 +148,22 @@ a {
 
 #j {
     animation: slide 2.8s 1;
+}
+
+#k {
+    animation: slide 3s 1;
+}
+
+#l {
+    animation: slide 3.2s 1;
+}
+
+#m {
+    animation: slide 3.4s 1;
+}
+
+#n {
+    animation: slide 3.6s 1;
 }
 
 @keyframes slide {
@@ -245,6 +261,51 @@ a {
 /*Paramètres de style de la page: LaCollecte (fin)*/
 
 /*Paramètres de style de la page: LaMétéo (début)*/
+#meteo {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.contenu {
+    width: 20vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 2rem;
+    border-radius: 4px;
+    transition: all .3s ease;
+    background-color: #ffb100;
+}
+
+.contenu > * {
+    flex: 1 1 100%;
+}
+
+.contenu > h2 {
+    margin: 0;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+.contenu a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 25px;
+    transition: .3s ease;
+}
+
+.contenu:hover {
+    background-color: white;
+}
+
+.contenu > a:hover {
+    border-radius: 4px;
+}
 /*Paramètres de style de la page: LaMétéo (fin)*/
 
 /*Paramètres de style de la page: LeLieu (début)*/
@@ -306,6 +367,14 @@ a {
 
     #lacollecte {
         display: initial;
+    }
+
+    #meteo {
+        flex-direction: column;
+    }
+
+    .contenu {
+        width: 70vw;
     }
 }
 /*Paramètres de dynamisation (fin)*/
