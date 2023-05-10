@@ -11,7 +11,7 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution la requête MySQL
-cursor.execute("SELECT thermometrie, hygrometrie, barometrie FROM capteur_meteorologique WHERE date = (select max(date) from capteur_meteorologique) order by heure desc limit 1")
+cursor.execute("SELECT thermometrie, hygrometrie, barometrie FROM capteur_meteorologique WHERE order by id DESC limit 1")
 
 # Obtention de la description de la requête MySQL
 description = cursor.description
