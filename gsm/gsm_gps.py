@@ -11,7 +11,8 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution la requête MySQL
-cursor.execute("SELECT coordonnees FROM gps WHERE date = (select max(date) from gps) order by heure limit 1")
+cursor.execute("SELECT coordonnees FROM gps order by id DESC limit 1")
+
 
 # Obtention de la description de la requête MySQL
 description = cursor.description
