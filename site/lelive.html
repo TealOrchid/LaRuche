@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="BSS, DD, RM, TB, TS">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>LaRuche - LeLive</title>
     <script src="script.js"></script>
 </head>
 <body>
     <div id="menu">
-        <input type="button" value="&#9587" id="close">
+        <input type="button" value="&#9587;" id="close">
         <ul>
             <li><a class="pages" href="index.html">L'Accueil</a></li>
             <li id="lacollecte"><a class="pages" href="lacollecte.html">LaCollecte</a></li>
@@ -21,21 +22,28 @@
             <li><a class="pages" href="lhistoire.html">L'Histoire</a></li>
         </ul>
     </div>
-    <header>
-        <a id="home_button" href="index.html">
-            <img src="images/logo.png" alt="Logo LaRuche" id="logo">
-        </a>
-        <input type="button" value="&#9776" id="open">
-    </header>
-    <img src="http://176.188.67.146:8082/?action=stream" alt="Livestream depuis l'intérieur de la ruche" id="live">
-    <div id="titre">
-        <div class="lettre" id="a">L</div>
-        <div class="lettre" id="b">e</div>
-        <div class="lettre" id="c">L</div>
-        <div class="lettre" id="d">i</div>
-        <div class="lettre" id="e">v</div>
-        <div class="lettre" id="f">e</div>
-        <img src="images/pot.png" alt="Pot de Miel" id="pot_titre">
-    </div>
+    <main>
+        <header>
+            <a id="home_button" href="index.html">
+                <img src="images/logo.png" alt="Logo LaRuche" id="logo">
+            </a>
+            <input type="button" value="&#9776;" id="open">
+        </header>
+        <img src="http://176.188.67.146:8082/?action=stream" alt="Livestream depuis l'intérieur de la ruche" id="live">
+        <footer>
+            <div id="titre">
+                <div id="a">L</div>
+                <div id="b">e</div>
+                <div id="c">L</div>
+                <div id="d">i</div>
+                <div id="e">v</div>
+                <div id="f">e</div>
+            </div>
+            <div id="pot">
+                <img src="images/pot.png" alt="Pot de miel">
+                <div id="miel_qui_coule"></div>
+            </div>
+        </footer>
+    </main>
 </body>
 </html>

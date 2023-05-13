@@ -1,30 +1,47 @@
 /*Paramètres de style généraux (début)*/
 body {
-    width: auto;
-    height: 100svh;
+    width: 100vw;
     height: 100vh;
-    background-color: #fdc12a;
-    margin: 0; 
+    margin: 0;
+    padding: 0;
     color: black;
     font-family: Arial;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    display: grid;
+    transition: all .3s ease;
+}
+
+#menu, main {
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
 
 /*Paramètres de style du menu (début)*/
 #menu {
+    z-index: 666;
     width: 100vw;
     height: 100vh;
     position: absolute;
     overflow: hidden;
-    color: white;
-    z-index: 100;
-    transform: translateY(-100%);
-    transition: transform 0.5s ease;
+    box-sizing: border-box;
+    padding: 2vw;
     display: flex;
     flex-direction: column;
     background-color: black;
+    color: white;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+}
+
+#close {
+    margin-inline: auto;
+    margin-right: 0;
+    padding: 0;
+    background-color: black;
+    border: none; 
+    font-size: max(16px, 2vw);
+    font-weight: bold;
+    color: #fdc12a;
+    text-align: end;;
 }
 
 ul {
@@ -33,84 +50,90 @@ ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-}
-
-li {
-    margin: 0.5rem;
+    row-gap: 1vw;
 }
 
 .pages {
-    font-size: 3rem;
     text-decoration: none;
+    font-size: max(20px, 3.5vw);
     color: #fdc12a;
-}
-
-input {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 2vw;
-    padding: 0;
-    border: none; 
-    font-weight: bold;
-}
-
-#open {
-    background-color: #fdc12a;
-    color: black;
-    font-size: 2.5rem;
-    line-height: 0.8;
-}
-
-#close {
-    background-color: black;
-    color: #fdc12a;
-    font-size: 1.5rem;
 }
 
 .pages:hover, #close:hover {
     color: white;
 }
+
+#lacollecte {
+    display: none;
+}
 /*Paramètres de style du menu (fin)*/
+
+main {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 2vw;
+    background-color: #fdc12a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2vw;
+}
 
 /*Paramètres de style de l'en-tête (début)*/
 header {
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#home_button {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
 }
 
 #logo {
-    width: 64px;
-    height: 64px;
-    margin: 2vw;
+    width: max(32px, 4.75vw);
+    height: max(32px, 4.75vw);
+}
+
+#open {
     padding: 0;
-    border: 0;
-    background-color: transparent;
+    background-color: #fdc12a;
+    border: none;
+    font-size: max(24px, 3vw);
+    font-weight: bold;
+    line-height: 0.8;
 }
 /*Paramètres de style de l'en-tête (fin)*/
 
-/*Paramètres de style du titre (début)*/
-#titre {
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    display: flex;
+/*Paramètres de style du pied de page (début)*/
+footer {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-.lettre {
-    margin: 0;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    line-height: 0.8;
-    font-size: clamp(7rem, 11rem, 15rem);
+/*Paramètres de style du titre (début)*/
+#titre {
+    display: inline-flex;
+    flex-direction: row;
+    line-height: 0.75;
+    font-size: 13vw;
+    overflow: hidden;
 }
 
 #a {
-    margin-left: 2vw;
     animation: slide 1s 1;
 }
 
@@ -176,62 +199,29 @@ header {
 }
 /*Paramètres de style du titre (fin)*/
 
-#pot_titre {
-    width: clamp(7rem, 11rem, 15rem);
-    height: auto;
-    margin: auto;
-    right: 0;
-    margin-right: 2vw;
-    margin-bottom: 2vw;
-}
-
-#lacollecte {
-    display: none;
-}
-/*Paramètres de style généraux (fin)*/
-
-/*Paramètres de style de la page: L'Accueil (début)*/
-#accueil {
-    margin: auto;
-    margin-right: 2vw;
-    margin-left: 35vw;
-    text-align: right;
-    font-size: clamp(1rem, 1.5rem, 2rem);
-    overflow: hidden;
-}
-/*Paramètres de style de la page: L'Accueil (fin)*/
-
-/*Paramètres de style de la page: LaCollecte (début)*/
-/* !!! Cette page est disponible que sur mobile, c'est fait exprès !!! */
-.lettre_lacollecte {
-    margin: 0;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    line-height: 0.8;
-    font-size: clamp(2rem, 4.5rem, 6rem);
-}
-
+/*Paramètres de style du pot de miel du titre (début)*/
 #pot {
-    margin: auto;
-    margin-inline: 5vw;
+    width: 12vw;
     display: grid;
 }
 
-#pot > * {
+#pot > img, #miel_qui_coule {
     grid-column-start: 1;
     grid-row-start: 1;
 }
 
 #pot > img {
-    width: 100%;
+    width: 12vw;
 }
 
 #miel_qui_coule {
-    margin-top: 15%;
+    height: 75%;
+    margin-top: 20%;
     margin-inline: auto;
-    width: 0.5rem;
+    margin-left: 45%;
+    width: 0.5vw;
     background-color: #ffc069;
-    animation: miel 5s 1s linear infinite;
+    animation: miel 5s 1s ease-in infinite;
 }
 
 @keyframes miel {
@@ -239,17 +229,7 @@ header {
         height: 0;
     }
 
-    5% {
-        height: 0;
-    }
-
-    60% {
-        height: 48%;
-        opacity: 0.75;
-    }
-
-    85% {
-        height: 70%;
+    75% {
         opacity: 0.5;
     }
 
@@ -258,23 +238,70 @@ header {
         opacity: 0;
     }
 }
+/*Paramètres de style du pot de miel du titre (fin)*/
+/*Paramètres de style du pied de page (fin)*/
+/*Paramètres de style généraux (fin)*/
+
+/*Paramètres de style de la page: L'Accueil (début)*/
+#p_accueil {
+    margin: auto;
+    font-size: max(16px, 1.75vw);
+    text-align: right;
+    margin-left: 30%
+}
+/*Paramètres de style de la page: L'Accueil (fin)*/
+
+/*Paramètres de style de la page: LaCollecte (début)*/
+/* !!! Cette page n'est disponible que sur mobile, c'est fait exprès !!! */
+#titre_lacollecte {
+    display: inline-flex;
+    flex-direction: row;
+    line-height: 0.75;
+    font-size: 13vw;
+    overflow: hidden;
+}
+
+#pot_lacollecte {
+    width: auto;
+    margin-inline: 0.0000001vw;
+    display: grid;
+}
+
+#pot_lacollecte > img, #miel_qui_coule_lacollecte {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#pot_lacollecte > img {
+    width: 100%;
+}
+
+#miel_qui_coule_lacollecte {
+    height: 75%;
+    margin-top: 20%;
+    margin-inline: auto;
+    margin-left: 45%;
+    width: 2vw;
+    background-color: #ffc069;
+    animation: miel 5s 1s ease-in infinite;
+}
 /*Paramètres de style de la page: LaCollecte (fin)*/
 
 /*Paramètres de style de la page: LaMétéo (début)*/
 #meteo {
-    margin: auto;
-    text-align: center;
+    margin-inline: auto;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    column-gap: 5vw;
+    text-align: center;
 }
 
 .contenu {
     width: 20vw;
+    padding: 2.5vw;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    padding: 2rem;
     border-radius: 4px;
     transition: all .3s ease;
     background-color: #ffb100;
@@ -286,17 +313,19 @@ header {
 
 .contenu > h2 {
     margin: 0;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 2vw;
+    font-size: max(16px, 2.5vw);
     letter-spacing: 1px;
 }
-.contenu a{
+
+.contenu > a {
+    padding: 1.25vw;
     background-color: black;
-    color: white;
-    text-decoration: none;
-    padding: 1rem;
     border-radius: 25px;
     transition: .3s ease;
+    font-size: max(12px, 1.25vw);
+    color: white;
+    text-decoration: none;
 }
 
 .contenu:hover {
@@ -306,75 +335,112 @@ header {
 .contenu > a:hover {
     border-radius: 4px;
 }
+
+#titres_meteo {
+    display: inline-flex;
+    flex-direction: row;
+    line-height: 0.75;
+    font-size: 11vw;
+    overflow: hidden;
+}
 /*Paramètres de style de la page: LaMétéo (fin)*/
 
 /*Paramètres de style de la page: LeLieu (début)*/
 #carte {
     width: 50vw;
+    margin-inline: auto;
+    margin-right: 0;
     aspect-ratio: 16 / 9;
-    margin: auto;
-    margin-right: 2vw;
     background-color: black;
 }
 /*Paramètres de style de la page: LeLieu (fin)*/
 
 /*Paramètres de style de la page: LeLive (début)*/
 #live {
-    width: 50vw;
+    width: 45vw;
+    margin-inline: auto;
+    margin-right: 0;
     aspect-ratio: 16 / 9;
-    margin: auto;
-    margin-right: 2vw;
     background-color: black;
 }
 /*Paramètres de style de la page: LeLive (fin)*/
 
 /*Paramètres de style de la page: L'Histoire (début)*/
-#histoire {
+#p_histoire {
     margin: auto;
-    margin-right: 2vw;
-    margin-left: 35vw;
+    font-size: max(16px, 1.75vw);
     text-align: right;
-    font-size: clamp(1rem, 1.5rem, 2rem);
-    overflow: hidden;
+    margin-left: 30%
 }
 /*Paramètres de style de la page: L'Histoire (fin)*/
 
-/*Paramètres de dynamisation (début)*/
+/*Paramètres de style pour mobile (début)*/
 @media only screen and (max-width: 960px){
-    a, #open, #close {
-        margin: 5vw;
+    #menu, main {
+        padding: 5vw;
     }
 
-    .lettre {
-        font-size: clamp(3.5rem, 5.5rem, 7.5rem);
-    }
-
-    #accueil, #histoire {
-        margin: auto;
-        margin-inline: 5vw;
-        text-align: center;
-        font-size: clamp(0.25rem, 1rem, 1rem);
-    }
-
-    #pot_titre {
-        display: none;
-    }
-
-    #carte, #live {
-        width: auto;
-        margin-inline: 5vw;
+    .pages {
+        font-size: max(20px, 4vh);
     }
 
     #lacollecte {
         display: initial;
     }
 
+    #logo {
+        width: max(32px, 4.75vh);
+        height: max(32px, 4.75vh);
+    }
+
+    #open, #close {
+        font-size: max(24px, 3vh); 
+    }
+
+    #titre {
+        font-size: 9vh;
+    }
+
+    #pot {
+        display: none;
+    }
+
+    #p_accueil, #p_histoire {
+        margin: auto;
+        text-align: center;
+        font-size: max(16px, 2.5vh);
+    }
+
+    #titre_lacollecte {
+        font-size: 8.5vh;
+    }
+
+    #carte, #live {
+        width: auto;
+        margin-inline: 0.0000001vw;
+    }
+
     #meteo {
+        margin-inline: initial;
         flex-direction: column;
+        column-gap: 0;
+        row-gap: 4vh;
     }
 
     .contenu {
-        width: 70vw;
+        width: 60vw;
+        margin-inline: auto;
+        padding: 5vw;
+    }
+
+    .contenu > h2 {
+        margin-bottom: 2vh;
+        font-size: max(16px, 2.5vh);
+    }
+
+    .contenu > a {
+        padding: 1.25vh;
+        font-size: max(12px, 1.75vh);
     }
 }
-/*Paramètres de dynamisation (fin)*/
+/*Paramètres de style pour mobile (fin)*/

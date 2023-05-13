@@ -1,18 +1,19 @@
-<!-- !!! Cette page est disponible que sur mobile, c'est fait exprès !!! -->
+<!-- !!! Cette page n'est disponible que sur mobile, c'est fait exprès !!! -->
 <!DOCTYPE html>
 <html lang="fr-fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="authors" content="BSS, DD, RM, TB, TS">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>LaRuche - LaCollecte</title>
     <script src="script.js"></script>
 </head>
 <body>
     <div id="menu">
-        <input type="button" value="&#9587" id="close">
+        <input type="button" value="&#9587;" id="close">
         <ul>
             <li><a class="pages" href="index.html">L'Accueil</a></li>
             <li id="lacollecte"><a class="pages" href="lacollecte.html">LaCollecte</a></li>
@@ -22,27 +23,31 @@
             <li><a class="pages" href="lhistoire.html">L'Histoire</a></li>
         </ul>
     </div>
-    <header>
-        <a id="home_button" href="index.html">
-            <img src="images/logo.png" alt="Logo LaRuche" id="logo">
-        </a>
-        <input type="button" value="&#9776" id="open">
-    </header>
-    <div id="pot">
-		<img src="images/pot.png">
-        <div id="miel_qui_coule"></div>
-	</div>
-    <div id="titre">
-        <div class="lettre_lacollecte" id="a">L</div>
-        <div class="lettre_lacollecte" id="b">a</div>
-        <div class="lettre_lacollecte" id="c">C</div>
-        <div class="lettre_lacollecte" id="d">o</div>
-        <div class="lettre_lacollecte" id="e">l</div>
-        <div class="lettre_lacollecte" id="f">l</div>
-        <div class="lettre_lacollecte" id="g">e</div>
-        <div class="lettre_lacollecte" id="h">c</div>
-        <div class="lettre_lacollecte" id="i">t</div>
-        <div class="lettre_lacollecte" id="j">e</div>
-    </div>
+    <main>
+        <header>
+            <a id="home_button" href="index.html">
+                <img src="images/logo.png" alt="Logo LaRuche" id="logo">
+            </a>
+            <input type="button" value="&#9776;" id="open">
+        </header>
+        <div id="pot_lacollecte">
+            <img src="images/pot.png" alt="Pot de miel">
+            <div id="miel_qui_coule_lacollecte"></div>
+        </div>
+        <footer>
+            <div id="titre_lacollecte">
+                <div id="a">L</div>
+                <div id="b">a</div>
+                <div id="c">C</div>
+                <div id="d">o</div>
+                <div id="e">l</div>
+                <div id="f">l</div>
+                <div id="g">e</div>
+                <div id="h">c</div>
+                <div id="i">t</div>
+                <div id="j">e</div>
+            </div>
+        </footer>
+    </main>
 </body>
 </html>
