@@ -243,11 +243,20 @@ footer {
 /*Paramètres de style généraux (fin)*/
 
 /*Paramètres de style de la page: L'Accueil (début)*/
-#p_accueil {
-    margin: auto;
-    font-size: max(16px, 1.75vw);
-    text-align: right;
-    margin-left: 30%
+#accueil {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    text-align: end;
+    font-size: 5vw;
+}
+
+#date, #heure {
+    text-align: end;
+    font-size: 2.5vw;
 }
 /*Paramètres de style de la page: L'Accueil (fin)*/
 
@@ -313,7 +322,6 @@ footer {
 
 .contenu > h2 {
     margin: 0;
-    margin-bottom: 2vw;
     font-size: max(16px, 2.5vw);
     letter-spacing: 1px;
 }
@@ -326,6 +334,12 @@ footer {
     font-size: max(12px, 1.25vw);
     color: white;
     text-decoration: none;
+}
+
+.contenu > span {
+    margin: 1vw;
+    margin-inline: 0;
+    font-size: max(14px, 2vw);
 }
 
 .contenu:hover {
@@ -405,7 +419,18 @@ footer {
         display: none;
     }
 
-    #p_accueil, #p_histoire {
+    h1 {
+        margin-inline: auto;
+        font-size: 6vh;
+    }
+    
+    #date, #heure {
+        margin-inline: auto;
+        text-align: center;
+        font-size: 2.5vh;
+    }
+
+    #p_histoire {
         margin: auto;
         text-align: center;
         font-size: max(16px, 2.5vh);
@@ -434,13 +459,17 @@ footer {
     }
 
     .contenu > h2 {
-        margin-bottom: 2vh;
         font-size: max(16px, 2.5vh);
     }
 
     .contenu > a {
         padding: 1.25vh;
         font-size: max(12px, 1.75vh);
+    }
+
+    .contenu > span {
+        margin: 2vh;
+        font-size: max(14px, 2vh);
     }
 }
 /*Paramètres de style pour mobile (fin)*/

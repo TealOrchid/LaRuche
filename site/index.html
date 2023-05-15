@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>LaRuche - L'Accueil</title>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div id="menu">
@@ -29,9 +29,12 @@
             </a>
             <input type="button" value="&#9776;" id="open">
         </header>
-        <p id="p_accueil">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit corporis obcaecati natus porro enim dolorem ratione. Numquam deserunt enim perferendis, laborum fugiat quos voluptas a quibusdam illum eaque praesentium? Sit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid ipsum delectus veniam non quis eos accusamus libero repudiandae. Nisi magni magnam a et nesciunt quae vitae enim perferendis obcaecati eum?
-        </p>
+        <div id="accueil">
+            <h1>Bienvenu(e) !</h1>
+            <span id="date"></span>
+            <span id="heure"></span>
+            <script>date_heure();</script>
+        </div>
         <footer>
             <div id="titre">
                 <div id="a">L</div>

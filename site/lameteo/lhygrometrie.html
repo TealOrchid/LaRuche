@@ -8,7 +8,10 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
     <title>LaRuche - L'Hygrométrie</title>
-    <script src="../script.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/RGraph.common.core.js"></script>
+    <script src="../js/RGraph.drawing.background.js"></script>
+    <script src="../js/RGraph.line.js"></script>
 </head>
 <body>
     <div id="menu">
@@ -29,6 +32,18 @@
             </a>
             <input type="button" value="&#9776;" id="open">
         </header>
+        <canvas id="cvs">[No canvas support]</canvas>
+        <script>
+            new RGraph.Line({
+                id: 'cvs',
+                data: [9,6,8,5,4,2,3],
+                options: {
+                }
+            }).draw().responsive([
+                {maxWidth: 900,  width:400, height:150, options: {xaxisLabels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], textSize: 10}},
+                {maxWidth: null, width:750, height:250, options: {xaxisLabels: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], textSize:12}}
+            ]);
+        </script>
         <footer>
             <div id="titres_meteo">
                 <div id="a">L</div>
