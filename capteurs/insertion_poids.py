@@ -1,47 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding:UTF-8 -*-
-"""
-INSERTION au sein de la table capteur_poids
-"""
 
 # Importations
-import MySQLdb
-import time
-import datetime
+import capteur_poids, MySQLdb, datetime
 
-#---------------------------------------------------------------------|
 # Creation des variables
+poids = 37
+date = str(datetime.datetime.now().date())
+heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 
-POIDS = 37
-
-V_DATE_now = time.strftime("%Y-%m-%d", time.gmtime())
-DATE = ("'"+V_DATE_now+"'")
-
-t=datetime.datetime.now()
-
-V_HEURE_now = time.strftime(f"{t.hour}:%M:%S", time.gmtime())
-HEURE = ("'"+V_HEURE_now+"'")
-
-
-
-#---------------------------------------------------------------------|
-#CONNEXION MYSQL
-
-""""""
-connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="admin", db="rucheco", charset="utf8")
-""""""
+# Connection a la base de donnees
+connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
 
 # Ouverture du cursor
-cursor = connection.cursor()#Les curseurs sont créés par la méthode connection.cursor (): ils sont liés à la connexion pendant toute la durée de vie
+cursor = connection.cursor()
 
+# Exécution de la requête MySQL
+cursor.execute(f"INSERT INTO `capteur_poids` (`poids`, `date`, `heure`) VALUES ('{poids}', '{date}', '{heure}');")
 
-# Exécution la requête MySQL
-""""""
-cursor.execute(f"INSERT INTO `capteur_poids` (`poids`, `date`, `heure`) VALUES ('{POIDS}', '{V_DATE_now}', '{V_HEURE_now}');")
-""""""
+# Envoie d'une instruction COMMIT au serveur MySQL, en engageant la transaction en cours
+connection.commit()
 
-# display row count 
-connection.commit()# Envoie d'une instruction COMMIT au serveur MySQL, en engageant la transaction en cours
+# Fermeture cursor
+cursor.close()
 
-cursor.close()#fermeture cursor
-connection.close ()#fermeture connexion
+# Déconnexion de la base de donnees
+connection.close ()
