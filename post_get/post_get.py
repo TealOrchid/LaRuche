@@ -1,116 +1,82 @@
 #!/usr/bin/env python3
 # -*- coding:UTF-8 -*-
 
-#importation
+# Importations
 import MySQLdb
 
-#récuperation de la temperature
-def temperature():
-    connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
-    cursor = connection.cursor()
-    cursor.execute("SELECT thermometrie FROM capteur_meteorologique order by id desc limit 1")
-    description = cursor.description
-    i = 0
-    column_string = ""
-    for column in description:
-        if i<2:
-            column_string+=column[0]+" | "
-        elif i<3:
-            column_string+=column[0]+"    | "
-        else:
-            column_string+=column[0]+"       | "   
-        i+=1
-   
-        print("\n | "+column_string)
-    for i in range(cursor.rowcount):
-        row=cursor.fetchone()
-        print(" | {0} | ".format(row[0]))
-    return row[0]
-    cursor.close()#fermeture cursor
-    connection.close #fermeture
+connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
 
-##récuperation de la pression
-def pression():
-    connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
-    cursor = connection.cursor()
-    cursor.execute("SELECT barometrie FROM capteur_meteorologique order by id desc limit 1")
-    description = cursor.description
-    i = 0
-    column_string = ""
-    for column in description:
-        if i<2:
-            column_string+=column[0]+" | "
-        elif i<3:
-            column_string+=column[0]+"    | "
-        else:
-            column_string+=column[0]+"       | "   
-        i+=1
-   
-        print("\n | "+column_string)
-    for i in range(cursor.rowcount):
-        row=cursor.fetchone()
-        print(" | {0} | ".format(row[0]))
-    return row[0]
-    cursor.close()#fermeture cursor
-    connection.close #fermeture
+# Récuperation de la température
+def temperature() -> float:
+    """
+    Renvoie la dernière valeur de l'attribut thermometrie de la table capteur_meteorologique
 
-#récuperation de l'humidite
-def humidite():
-    connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
+    :return: dernière température mesuré
+    :rtype: float
+    """
     cursor = connection.cursor()
-    cursor.execute("SELECT hygrometrie FROM capteur_meteorologique order by id desc limit 1")
-    description = cursor.description
-    i = 0
-    column_string = ""
-    for column in description:
-        if i<2:
-            column_string+=column[0]+" | "
-        elif i<3:
-            column_string+=column[0]+"    | "
-        else:
-            column_string+=column[0]+"       | "   
-        i+=1
-   
-        print("\n | "+column_string)
-    for i in range(cursor.rowcount):
-        row=cursor.fetchone()
-        print(" | {0} | ".format(row[0]))
+    cursor.execute("SELECT thermometrie FROM capteur_meteorologique ORDER BY id DESC LIMIT 1")
+    row = cursor.fetchone()
+    cursor.close()
+    connection.close
     return row[0]
-    cursor.close()#fermeture cursor
-    connection.close #fermeture
 
-#recuperation du poids
-def poids():
-    connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
+# Récuperation de la pression
+def pression() -> float:
+    """
+    Renvoie la dernière valeur de l'attribut barometrie de la table capteur_meteorologique
+
+    :return: dernière pression mesuré
+    :rtype: float
+    """
     cursor = connection.cursor()
-    cursor.execute("SELECT poids FROM `capteur_poids` order by id DESC limit 1")
-    description = cursor.description
-    i = 0
-    column_string = ""
-    for column in description:
-        if i<2:
-            column_string+=column[0]+" | "
-        elif i<3:
-            column_string+=column[0]+"    | "
-        else:
-            column_string+=column[0]+"       | "   
-        i+=1
-   
-        print("\n | "+column_string)
-    for i in range(cursor.rowcount):
-        row=cursor.fetchone()
-        print(" | {0} | ".format(row[0]))
+    cursor.execute("SELECT barometrie FROM capteur_meteorologique ORDER BY id DESC LIMIT 1")
+    row = cursor.fetchone()
+    cursor.close()
+    connection.close
     return row[0]
-    cursor.close()#fermeture cursor
-    connection.close #fermeture
-        else:
-            column_string+=column[0]+"       | "   
-        i+=1
-   
-        print("\n | "+column_string)
-    for i in range(cursor.rowcount):
-        row=cursor.fetchone()
-        print(" | {0} | ".format(row[0]))
+
+# Récuperation de l'humidité
+def humidite() -> float:
+    """
+    Renvoie la dernière valeur de l'attribut hygrometrie de la table capteur_meteorologique
+
+    :return: dernier taux d'humidité mesuré
+    :rtype: float
+    """
+    cursor = connection.cursor()
+    cursor.execute("SELECT hygrometrie FROM capteur_meteorologique ORDER BY id DESC LIMIT 1")
+    row = cursor.fetchone()
+    cursor.close()
+    connection.close
     return row[0]
-    cursor.close()#fermeture cursor
-    connection.close #fermeture
+
+# Récuperation du poids
+def poids() -> float:
+    """
+    Renvoie la dernière valeur de l'attribut poids de la table capteur_poids
+
+    :return: dernier poids mesuré
+    :rtype: float
+    """
+    cursor = connection.cursor()
+    cursor.execute("SELECT poids FROM capteur_poids ORDER BY id DESC LIMIT 1")
+    row = cursor.fetchone()
+    cursor.close()
+    connection.close
+    return row[0]
+
+# Récuperation des coordonnées
+def coordonnees() -> tuple:
+    """
+    Renvoie la dernière valeur de l'attribut coordonnees de la table gps
+
+    :return: dernières coordonnées mesuré
+    :rtype: tuple
+    """
+    cursor = connection.cursor()
+    cursor.execute("SELECT coordonnees FROM gps ORDER BY id DESC LIMIT 1")
+    row = cursor.fetchone()
+    cursor.close()
+    connection.close
+    return row[0]
