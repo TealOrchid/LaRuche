@@ -13,32 +13,13 @@ cursor = connection.cursor()
 # Exécution la requête MySQL
 cursor.execute("SELECT poids FROM `capteur_poids` WHERE order by id DESC limit 1")
 
-# Obtention de la description de la requête MySQL
-description = cursor.description
-
-# Affichage des colonnes
-column_string = ""
-i = 0
-
-for column in description:
-    if i < 2:
-        column_string += column[0] + " | "
-    elif i < 3:
-        column_string += column[0] + "    | "
-    else:
-        column_string += column[0] + "       | "   
-    i += 1
-
-print("\n | " + column_string)
-
+# Sélection de la dernière ligne de la relation
 for i in range(cursor.rowcount):
     row = cursor.fetchone()
-    print(" | {0} |".format(row[0]))
     
 # Envoie du message
 if row[0] >= 95:
-    rep = lib_gsm.SendTextMessage("0760291070","Vous pouvez recolter le miel")
-    print('EnvoiSMS=', rep, '\n')
+    lib_gsm.SendTextMessage("0760291070", "Vous pouvez recolter le miel")
 
 # Fermeture du cursor 
 cursor.close()
