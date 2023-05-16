@@ -2,10 +2,10 @@
 # -*- coding:UTF-8 -*-
 
 # Importations
-import capteur_meteo, MySQLdb, datetime
+import bme280, MySQLdb, datetime
 
 # Creation des variables
-temperature, pression, humidité = capteur_meteo.lireBME280Val()[0], capteur_meteo.lireBME280Val()[1], capteur_meteo.lireBME280Val()[2]
+temperature, pression, humidité = bme280.lireBME280Val()[0], bme280.lireBME280Val()[1], bme280.lireBME280Val()[2]
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 

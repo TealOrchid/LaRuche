@@ -2,10 +2,14 @@
 # -*- coding:UTF-8 -*-
 
 # Importations
-import capteur_poids, MySQLdb, datetime
+import MySQLdb, datetime
+from hx711 import HX711
 
 # Creation des variables
-poids = 37
+brocheDT = 11   # DT du HX711 branché à GPIO5
+brocheSCK = 12  # SCK du HX711 branché à GPIO6
+hx = HX711(brocheDT, brocheSCK) 
+poids = hx.get_weight(5)
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 

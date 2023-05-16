@@ -9,7 +9,7 @@ coordonnees = f"{gps.dd_lat}, {gps.dd_long}"
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 
-# Connection a la base de donnees 
+# Connection a la base de donnees
 connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8")
 
 # Ouverture du cursor
