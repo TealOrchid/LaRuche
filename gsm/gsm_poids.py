@@ -14,8 +14,7 @@ cursor = connection.cursor()
 cursor.execute("SELECT poids FROM `capteur_poids` WHERE order by id DESC limit 1")
 
 # Sélection de la dernière ligne de la relation
-for i in range(cursor.rowcount):
-    row = cursor.fetchone()
+row = cursor.fetchone()
     
 # Envoie du message
 if row[0] >= 95:

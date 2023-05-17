@@ -14,8 +14,7 @@ cursor = connection.cursor()
 cursor.execute("SELECT coordonnees FROM gps order by id DESC limit 1")
 
 # Sélection de la dernière ligne de la relation
-for i in range(cursor.rowcount):
-    row = cursor.fetchone()
+row = cursor.fetchone()
 
 # Envoie du message
 if row[0][0] >= "valeur" or row[0][0] <= "valeur" or row[0][1] >= "valeur" or row[0][1] <= "valeur":
