@@ -33,15 +33,17 @@
             <input type="button" value="&#9776;" id="open">
         </header>
         <canvas id="cvs">[No canvas support]</canvas>
+        <!--#exec cgi="/cgi-bin/barometrie.py"-->
         <script>
             new RGraph.Line({
                 id: 'cvs',
-                data: [9,6,8,5,4,2,3],
+                data: valeurs_barometrie,
                 options: {
+                    title: "Titre",
+                    backgroundGridColor: "black",
                 }
-            }).draw().responsive([
-                {maxWidth: 900,  width:400, height:150, options: {xaxisLabels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'], textSize: 10}},
-                {maxWidth: null, width:750, height:250, options: {xaxisLabels: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], textSize:12}}
+            }).trace().responsive([
+                {width:1000, height:350, options: {xaxisLabels: dates_barometrie, textSize:12}}
             ]);
         </script>
         <footer>

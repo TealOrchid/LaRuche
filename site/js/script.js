@@ -1,4 +1,7 @@
 let overlap, open, close;
+let valeurs_barometrie = [], dates_barometrie = [];
+let valeurs_hygrometrie = [], dates_hygrometrie = [];
+let valeurs_thermometrie = [], dates_thermometrie = [];
 
 function initMap() {
     let ruche = {lat: 43.1139595, lng: 5.8546205};
