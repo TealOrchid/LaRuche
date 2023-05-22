@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="authors" content="BSS, DD, RM, TB, TS">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>LaRuche - L'Hygrométrie</title>
-    <script src="../js/script.js"></script>
-    <script src="../js/RGraph.common.core.js"></script>
-    <script src="../js/RGraph.drawing.background.js"></script>
-    <script src="../js/RGraph.line.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/RGraph.common.core.js"></script>
+    <script src="js/RGraph.drawing.background.js"></script>
+    <script src="js/RGraph.line.js"></script>
 </head>
 <body>
     <div id="menu">
         <input type="button" value="&#9587;" id="close">
         <ul>
-            <li><a class="pages" href="../index.html">L'Accueil</a></li>
-            <li id="lacollecte"><a class="pages" href="../lacollecte.html">LaCollecte</a></li>
-            <li><a class="pages" href="../lameteo.html">LaMétéo</a></li>
-			<li><a class="pages" href="../lelieu.html">LeLieu</a></li>
-            <li><a class="pages" href="../lelive.html">LeLive</a></li>
-            <li><a class="pages" href="../lhistoire.html">L'Histoire</a></li>
+            <li><a class="pages" href="index.html">L'Accueil</a></li>
+            <li id="lacollecte"><a class="pages" href="lacollecte.html">LaCollecte</a></li>
+            <li><a class="pages" href="lameteo.html">LaMétéo</a></li>
+			<li><a class="pages" href="lelieu.html">LeLieu</a></li>
+            <li><a class="pages" href="lelive.html">LeLive</a></li>
+            <li><a class="pages" href="lhistoire.html">L'Histoire</a></li>
         </ul>
     </div>
     <main>
         <header>
-            <a id="home_button" href="../index.html">
-                <img src="../images/logo.png" alt="Logo LaRuche" id="logo">
+            <a id="home_button" href="index.html">
+                <img src="images/logo.png" alt="Logo LaRuche" id="logo">
             </a>
             <input type="button" value="&#9776;" id="open">
         </header>
@@ -37,13 +37,13 @@
         <script>
             new RGraph.Line({
                 id: 'cvs',
-                data: valeurs_hygrometrie,
+                data: valeurs,
                 options: {
                     title: "Titre",
                     backgroundGridColor: "black",
                 }
             }).trace().responsive([
-                {width:1000, height:350, options: {xaxisLabels: dates_hygrometrie, textSize:12}}
+                {width:1000, height:350, options: {xaxisLabels: dates, textSize:12}}
             ]);
         </script>
         <footer>
@@ -63,7 +63,7 @@
                 <div id="m">e</div>
             </div>
             <div id="pot">
-                <img src="../images/pot.png" alt="Pot de miel">
+                <img src="images/pot.png" alt="Pot de miel">
                 <div id="miel_qui_coule"></div>
             </div>
         </footer>

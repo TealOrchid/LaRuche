@@ -11,16 +11,18 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution de la requête MySQL
-cursor.execute(f"SELECT hygrometrie, date FROM capteur_meteorologique ORDER BY id DESC LIMIT 21;")
+cursor.execute(f"SELECT hygrometrie, date FROM capteur_meteorologique ORDER BY id DESC LIMIT 7;")
 
+# Récupération des données
 donnees = cursor.fetchall()[::-1]
-print('Content-Type: text/html\n\n')
-for donnee in donnees:
-    print(f"<script>valeurs_hygrometrie.push({donnee[0]});</script>")
-    print(f"<script>dates_hygrometrie.push({donnee[1].strftime('%d/%m')});</script>")
 
 # Fermeture du cursor 
 cursor.close()
 
 # Déconnection de MySQL
-connection.close
+connection.close()
+
+# Envoie des données sur le site
+print('Content-Type: text/html\n\n')
+print(f"<script>let valeurs = {[donnee[0] for donnee in donnees]};</script>")
+print(f"<script>let dates = {[donnee[1].strftime('%d/%m') for donnee in donnees]};</script>")
