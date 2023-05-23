@@ -11,10 +11,10 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution de la requête MySQL
-cursor.execute(f"SELECT thermometrie, hygrometrie, barometrie FROM capteur_meteorologique ORDER BY id DESC LIMIT 1;")
+cursor.execute(f"SELECT poids FROM capteur_poids ORDER BY id DESC LIMIT 1;")
 
 # Récupération des données
-donnees = cursor.fetchone()
+poids = cursor.fetchone()[0]
 
 # Fermeture du cursor 
 cursor.close()
@@ -22,10 +22,14 @@ cursor.close()
 # Déconnection de MySQL
 connection.close()
 
+# Traitement des données
+poids_max = 100
+pourcentage = poids * 100 / poids_max
+pourcentage = "0" + str(pourcentage) if pourcentage < 10 else str(pourcentage)
+
 # Envoie des données sur le site
 print('Content-Type: text/html\n\n')
-print(f"""<script>
-    document.querySelector('#temperature').innerHTML = '{round(donnees[0], 2)}ºC';
-    document.querySelector('#humidite').innerHTML = '{round(donnees[1], 2)}%';
-    document.querySelector('#pression').innerHTML = '{round(donnees[2], 2)} hPa';
-    </script>""")
+if float(pourcentage) < 100:
+    print(f"<img src='images/pots/pot{pourcentage[0]}.png' alt='Pot de miel'>")
+else:
+    print(f"<img src='images/pots/pot10.png' alt='Pot de miel'>")
