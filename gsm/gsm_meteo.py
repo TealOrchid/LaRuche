@@ -11,10 +11,16 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution la requête MySQL
-cursor.execute("SELECT thermometrie, hygrometrie, barometrie FROM capteur_meteorologique WHERE order by id DESC limit 1")
+cursor.execute("SELECT thermometrie, hygrometrie, barometrie FROM capteur_meteorologique ORDER BY id DESC LIMIT 1")
 
-# Sélection de la dernière ligne de la relation
+# Récupération des données
 row = cursor.fetchone()
+
+# Fermeture du cursor 
+cursor.close()
+
+# Déconnection de MySQL
+connection.close()
 
 # Envoie du message
 if row[0] <= 15:
@@ -34,9 +40,3 @@ if row[2] <= "valeur":
     
 if row[2] >= "valeur":
     lib_gsm.SendTextMessage("0760291070", "Pression dans la ruche trop élevée !")
-
-# Fermeture du cursor 
-cursor.close()
-
-# Déconnection de MySQL
-connection.close
