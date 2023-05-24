@@ -22,7 +22,12 @@ cursor.close()
 # Déconnection de MySQL
 connection.close()
 
+# Traitement des données
+donnees = donnees[0].split()
+
 # Envoie des données sur le site
 print('Content-Type: text/html\n\n')
 print(f"""<script>
+    let latitude = {donnees[0][:-2]};
+    let longitude = {donnees[1]};
     </script>""")
