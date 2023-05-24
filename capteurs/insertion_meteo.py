@@ -5,7 +5,7 @@
 import bme280, MySQLdb, datetime
 
 # Creation des variables
-temperature, pression, humidité = bme280.lireBME280Val()[0], bme280.lireBME280Val()[1], bme280.lireBME280Val()[2]
+temperature, humidité, pression = bme280.lireBME280Val()[0], bme280.lireBME280Val()[1], bme280.lireBME280Val()[2]
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 
