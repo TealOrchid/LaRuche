@@ -25,4 +25,4 @@ connection.commit()
 cursor.close()
 
 #Déconnexion de la base de donnees
-connection.close ()
+connection.close()
