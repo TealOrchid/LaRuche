@@ -24,5 +24,7 @@ connection.close()
 
 # Envoie des données sur le site
 print('Content-Type: text/html\n\n')
-print(f"<script>let valeurs = {[donnee[0] for donnee in donnees]};</script>")
-print(f"<script>let dates = {[donnee[1].strftime('%d/%m') for donnee in donnees]};</script>")
+print(f"""<script>
+    let valeurs = {[donnee[0] for donnee in donnees]};
+    let dates = {[donnee[1].strftime('%d/%m') for donnee in donnees]};
+    </script>""")
