@@ -24,27 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `capteurs`
---
-
-CREATE TABLE IF NOT EXISTS `capteurs` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `modele` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `fonction` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Contenu de la table `capteurs`
---
-
-INSERT INTO `capteurs` (`nom`, `modele`, `fonction`) VALUES
-('gps', 'modele_gps', 'Donne les coordonnées de son emplacement');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `gps`
 --
 
