@@ -16,7 +16,7 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution de la requête MySQL
-cursor.execute(f"INSERT INTO `gps` VALUES ('{coordonnees}', '{date}', '{heure}');")
+cursor.execute(f"INSERT INTO `gps` (`coordonnees`, `date`, `heure`) VALUES ('{coordonnees}', '{date}', '{heure}');")
 
 # Envoie d'une instruction COMMIT au serveur MySQL, en engageant la transaction en cours
 connection.commit()
