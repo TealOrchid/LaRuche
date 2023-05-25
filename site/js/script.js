@@ -1,11 +1,5 @@
 let overlap, open, close;
 
-function initMap() {
-    let ruche = {lat: latitude, lng: longitude};
-    let carte = new google.maps.Map(document.getElementById("carte"), {zoom: 15, center: ruche});
-    new google.maps.Marker({position: ruche, map: carte, title: "LaRuche"});
-}
-
 function date_heure() {
     const date = new Date();
     const tab_jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi","Vendredi", "Samedi"];

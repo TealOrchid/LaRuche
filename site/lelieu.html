@@ -31,6 +31,13 @@
         </header>
         <div id="carte"></div>
         <!--#exec cgi="/cgi-bin/coordonnees.py"-->
+        <script>
+            function initMap() {
+                let ruche = {lat: latitude, lng: longitude};
+                let carte = new google.maps.Map(document.getElementById("carte"), {zoom: 15, center: ruche});
+                new google.maps.Marker({position: ruche, map: carte, title: "LaRuche"});
+            }
+        </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvzmNnNQZPb2k2HDlDMSItEW2UEm5rR7M&callback=initMap"></script>
         <footer>
             <div id="titre">
