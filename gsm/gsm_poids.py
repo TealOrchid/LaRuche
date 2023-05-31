@@ -16,6 +16,12 @@ cursor.execute("SELECT poids FROM `capteur_poids` ORDER BY id DESC LIMIT 1")
 # Récupération des données
 row = cursor.fetchone()
 
+# Exécution la requête MySQL
+cursor.execute("SELECT numero_telephone FROM contatcs WHERE fonction = 'Apicultrice'")
+
+# Récupération du numéro de téléphone
+numero_telephone = cursor.fetchone()
+
 # Fermeture du cursor 
 cursor.close()
 
@@ -24,4 +30,4 @@ connection.close()
 
 # Envoie du message
 if row[0] >= 95:
-    lib_gsm.SendTextMessage("0760291070", "Vous pouvez recolter le miel")
+    lib_gsm.SendTextMessage(numero_telephone, "Le miel peut etre recolte !")
