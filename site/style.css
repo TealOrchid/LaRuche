@@ -390,6 +390,12 @@ h1 {
     text-align: right;
     margin-left: 30%
 }
+
+#github {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 /*Paramètres de style de la page: L'Histoire (fin)*/
 
 /*Paramètres de style pour mobile (début)*/
