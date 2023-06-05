@@ -5,7 +5,7 @@
 import gps, MySQLdb, datetime
 
 # Creation des variables
-coordonnees = f"{gps.dd_lat}, {gps.dd_long}"
+coordonnees = f"{gps.latitude}, {gps.longitude}"
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 

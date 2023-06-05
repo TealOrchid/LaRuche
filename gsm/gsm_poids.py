@@ -2,7 +2,8 @@
 # -*- coding:UTF-8 -*-
 
 # Importations
-import MySQLdb, lib_gsm
+import MySQLdb
+from gsmHat import GSMHat
 
 # Connection à MySQL
 connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8mb4")
@@ -28,6 +29,9 @@ cursor.close()
 # Déconnection de MySQL
 connection.close()
 
+# Init gsmHat
+gsm = GSMHat('/dev/ttyAMA0', 115200)
+
 # Envoie du message
 if row[0] >= 95:
-    lib_gsm.SendTextMessage(numero_telephone, "Le miel peut etre recolte !")
+    gsm.SMS_write(numero_telephone, "Le miel peut etre recolte !")
