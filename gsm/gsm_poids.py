@@ -3,7 +3,7 @@
 
 # Importations
 import MySQLdb
-from gsmHat import GSMHat
+from gsmHat import GSMHat, SMS
 
 # Connection à MySQL
 connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="Miel", db="ruche", charset="utf8mb4")
@@ -18,10 +18,10 @@ cursor.execute("SELECT poids FROM `capteur_poids` ORDER BY id DESC LIMIT 1")
 row = cursor.fetchone()
 
 # Exécution la requête MySQL
-cursor.execute("SELECT numero_telephone FROM contatcs WHERE fonction = 'Apicultrice'")
+cursor.execute("SELECT numero_telephone FROM contacts WHERE fonction = 'Apicultrice'")
 
 # Récupération du numéro de téléphone
-numero_telephone = cursor.fetchone()
+numero_telephone = cursor.fetchone()[0]
 
 # Fermeture du cursor 
 cursor.close()
