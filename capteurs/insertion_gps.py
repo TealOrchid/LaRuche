@@ -2,12 +2,12 @@
 # -*- coding:UTF-8 -*-
 
 # Importations
-import gps, MySQLdb, datetime
+import MySQLdb, datetime
+from gps import GPS
 
 # Creation des variables
-gps.init_gps()
-tuple_coord = gps.lecture_coordonnees()
-coordonnees = f"{tuple_coord[0]}, {tuple_coord[1]}"
+gps = GPS('/dev/ttyAMA0', 115200)
+gps.close()
 date = str(datetime.datetime.now().date())
 heure = f"{datetime.datetime.now().hour}:{datetime.datetime.now().minute}:{datetime.datetime.now().second}"
 
@@ -18,7 +18,7 @@ connection = MySQLdb.connect(host="localhost", port=3306, user="admin", passwd="
 cursor = connection.cursor()
 
 # Exécution de la requête MySQL
-cursor.execute(f"INSERT INTO `gps` (`coordonnees`, `date`, `heure`) VALUES ('{coordonnees}', '{date}', '{heure}');")
+cursor.execute(f"INSERT INTO `gps` (`coordonnees`, `date`, `heure`) VALUES ('{f'{gps.Latitude}, {gps.Longitude}'}', '{date}', '{heure}');")
 
 # Envoie d'une instruction COMMIT au serveur MySQL, en engageant la transaction en cours
 connection.commit()
